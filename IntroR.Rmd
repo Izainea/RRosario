@@ -100,7 +100,11 @@ Los paneles de RStudio permiten una interacción más amigable con R. Veamos a c
 
 ### Consola
 
-Este es el espacio vital de R, aquí recibirá las instrucciones y todo lo que se ejecute debe incluirse aquí, más adelante crearemos ejemplos sofisticados de como interactuar con la consola desde otros paneles.
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/Consola1.png"  >
+</div>
+
+Este es el espacio vital de R, en este panel recibirá las instrucciones y todo lo que se ejecute debe incluirse aquí, más adelante crearemos ejemplos sofisticados de como interactuar con la consola desde otros paneles.
 
 Empezaremos con cuentas muy simples trabajando con R como calculadora:
 
@@ -118,11 +122,143 @@ Empezaremos con cuentas muy simples trabajando con R como calculadora:
 ```
 
 
-Aquí hacemos un resumen de algunas operaciones elementales mpás importantes:
+Como pueden apreciar, hay algunos operadores que son tan comunes, como `%/%`, veamos una lista de operaciones, valores y funciones útiles que podríamos necesitar a lo largo del módulo:
+
+
+### Operaciones Elementales
+
+Código |  Operación                                
+--------------------|--------------------
+```+``` | Suma
+```-``` | Resta 
+```*```  | Multiplicación
+```/``` | División 
+```^``` | Potencia 
+```%/%``` | Cociente entero
+``%%`` | Resto de división entera
+
+El cociente entero y el residuo permite que recremos una división de primaria, como la siguiente:
+
+***
+*20 entre 6 es 3 y sobran dos*
+
+***
+
+```{r operaciones4, exercise=TRUE, exercise.lines = 3}
+20%/%6
+```
+
+y
+
+```{r operaciones5, exercise=TRUE, exercise.lines = 3}
+20%%6
+```
+
+### Valores destacados
+
+Podemos también utilizar valores especiales, como pi, valores infinitos y valores deconocidos:
+
+
+Código |  Significado                                 
+--------------------|--------------------
+```pi``` | [$\pi$](https://es.wikipedia.org/wiki/Número_π) 
+`Inf` | [$\infty$](https://es.wikipedia.org/wiki/Infinito)
+`NaN` | Indeterminación (Not a Number)
+`NA` | Valor desconocido (Not Available)
+
+```{r operaciones6, exercise=TRUE, exercise.lines = 3}
+pi
+```
+
+```{r operaciones7, exercise=TRUE, exercise.lines = 3}
+4/0
+```
 
 
 
-### Cómo pedir ayuda
+### Funciones 
+
+Igualmente, podemos utilizar funciones matemáticas básicas:
+
+
+Código |  Función                            
+--------------------|--------------------
+```sqrt(x)``` | $\sqrt{x}$
+```exp(x)``` | $e^x$  
+```log(x)``` | $\ln(x)$
+```log10(x)``` | $\log_{10}(x)$
+```log(x,a)``` | $\log_a(x)$ 
+```abs(x)``` | $\begin{vmatrix}x\end{vmatrix}$
+```sin(x)``` | $\sin(x)$
+```cos(x)``` | $\cos(x)$
+```tan(x)``` | $\tan(x)$
+```asin(x)``` | $\arcsin(x)$
+```acos(x)``` | $\arccos(x)$
+```atan(x)``` | $\arctan(x)$
+
+```{r tri, exercise=TRUE, exercise.lines = 3}
+sin(pi/2)
+exp(1)
+sqrt(16)
+```
+
+o funciones útiles en alñgoritmos y de un carácter más computacional:
+
+Código |  Función                                 
+-------|--------------------
+```print(x,n)``` | Muestra las $n$ cifras significativa del número $x$
+```round(x,n)``` | Redondea a $n$ cifras significativas un resultado o vector numérico $x$
+```floor(x)``` | $\lfloor x\rfloor$, parte entera por defecto de $x$
+```ceiling(x)``` | $\lceil x\rceil$, parte entera por exceso de $x$
+```trunc(x)``` | Parte entera de $x$, eliminando la parte decimal
+
+
+```{r das, exercise=TRUE, exercise.lines = 4}
+print(pi,5)
+round(pi,5)
+floor(pi)
+ceiling(pi)
+```
+
+También podemos definir variables y usarlas con una sintaxis muy sencilla:
+
+***
+ `nombre_variable = valor`
+
+***
+
+```{r varia, exercise=TRUE, exercise.lines = 5}
+miVariable = 4
+doble = miVariable*2
+doble+doble/2
+```
+
+Incluso podemos armar nuestras propias funciones:
+
+***
+`nombre_función = function(variable){función}`
+
+***
+
+
+```{r 123, exercise=TRUE, exercise.lines = 5}
+miVariable = 4
+doble = function(x){2*x}
+doble(miVariable)
+cuadrado = function(x){x^2}
+cuadrado(miVariable)
+```
+
+Este último ejercicio debió darle problemas, pues tuvo que poner cada línea de lo que escribió para lograr el resultado deseado. El área de trabajo de RStudio permite que este ejercicio no sea tan complicado, usaremos scripts de R, que no son más que ficheros de instrucciones.
+
+### Scripts
+
+
+
+
+
+
+## Cómo pedir ayuda
 
 - ```help()```: obtener ayuda por consola
 - ```??...```: obtener ayuda por consola
