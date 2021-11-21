@@ -309,16 +309,33 @@ History les mostrará las instrucciones ejecutadas:
 
 **Tutorial**
 
-Que contiene tutoriales sencillos para iniciar el trabajo con R.
+Contiene tutoriales sencillos para iniciar el trabajo con R.
 
+### Archivos, gráficos, paquetes y ayuda
 
-## Cómo pedir ayuda
+El último panel permitira visualizar gráficos, explorar archivos y consultar la ayuda de R. Además permitirá ver la lista de paquetes y ahí abrirá la documentación cuando la necesitemos:
+
+#### Fijar directorio de trabajo
+
+Inicialmente debemos estar trabajando en la carpeta de Documentos que R la fija por defecto, sin emabrgo, si queremos trabajar en otra ruta es necesario cambiar la ruta de trabajo, para lograrlo en la consola escribimos lo siguiente:
+
+```
+setwd("C:/ruta del directorio de trabajo")
+```
+
+verificamos usando getwd()
+
+```
+getwd()
+```
+
+#### Cómo pedir ayuda
 
 - ```help()```: obtener ayuda por consola
 - ```??...```: obtener ayuda por consola
 - Pestaña ```Help``` de Rstudio
 - [Cheat Sheet de RStudio](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
-- Buscar en San Google (stackoverflow, R project...)
+- Buscar en Google (stackoverflow, R project...)
 
 
 <div class="aligncenter">
@@ -326,7 +343,7 @@ Que contiene tutoriales sencillos para iniciar el trabajo con R.
 </div>
 
 
-### Paquetes: cómo instalarlos y cargarlos
+#### Paquetes: cómo instalarlos y cargarlos
 
 <l class="definition">Paquete.</l> Librería con funciones y datos que no necesariamente vienen instaladas de serie 
 
