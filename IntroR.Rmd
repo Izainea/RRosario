@@ -249,12 +249,34 @@ cuadrado = function(x){x^2}
 cuadrado(miVariable)
 ```
 
-Este último ejercicio debió darle problemas, pues tuvo que poner cada línea de lo que escribió para lograr el resultado deseado. El área de trabajo de RStudio permite que este ejercicio no sea tan complicado, usaremos scripts de R, que no son más que ficheros de instrucciones.
+Este último ejercicio debió darle problemas, pues tuvo que poner cada línea de lo que escribió para lograr el resultado deseado. El área de trabajo de RStudio permite que este ejercicio no sea tan complicado, usaremos scripts de R, que no son más que ficheros en los que guardamos las instrucciones que R debe seguir.
 
 ### Scripts
 
+Creemos un script nuevo:
+
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/Script.png"  >
+</div>
 
 
+Copie en el script la siguiente orden:
+
+
+```
+miVariable = 4
+doble = function(x){2*x}
+doble(miVariable)
+cuadrado = function(x){x^2}
+cuadrado(miVariable)
+```
+
+Para ejecuitar su script tiene dos alternativas:
+
+* Oprimir [Ctrl]+[R]
+* Hacer clic en el boton Run
+
+Su RStudio debe verse así:
 
 
 
