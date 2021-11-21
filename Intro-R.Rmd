@@ -1,0 +1,594 @@
+---
+title: "Introducción a R"
+output: learnr::tutorial
+runtime: shiny_prerendered  
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+data=read.csv("https://raw.githubusercontent.com/jazaineam1/Script-B-sicos/master/nac2017.csv",sep=";",header=T)
+data=data[data$EDAD_PADRE!=999,]
+```
+
+## Conociendo R
+
+
+### ¿Qué es R?
+
+<div class="aligncenter"> 
+  <img src="https://cran.rstudio.com/Rlogo.svg" width = "100"  >
+</div>
+
+R es un entorno y lenguaje de programación para el análisis estadístico y gráfico de datos. Es un proyuecto de software libre y código abierto y hoy, junto con  Python, es uno de los lenguajes obligatorios en la analítica de datos.
+
+Para trabajarlo aparte de R debemos instalar R-Studio, una interfaz gráfica de usuario de R para todos los sistemas operativos
+
+Es un entorno integrado para programar y analizar con R.
+
+<div class="aligncenter"> 
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/InterfazRStudio.png?raw=true"  >
+</div> 
+
+Para instalar lo requerido en el sistema se sugiere seguir las siguientes instrucciones:
+
+
+### Cómo instalar R
+
+1. Dirigirse  a [CRAN](http://cran.r-project.org/)
+
+![](/imagenes/instaR.png)
+2. Ingresar al  enlace correspondiente a tu sistema operativo (en el ejemplo trabajaremos con **Windows**):
+
+
+
+3. Seguir las instrucciones de instalación correspondientes
+
+**Si trabajan con Ubuntu o Debian**
+
+1. Abrir la terminal, estando conectados a internet
+2. Introducir lo siguiente: ```sudo aptitude install r-base```
+
+
+### Cómo instalar RStudio
+
+1. [Obtener RStudio](http://www.rstudio.com/products/rstudio/download/)
+2. **Solo para  Linux**, ejecutar en una terminal la siguiente instrucción para completar la instalación: ```sudo dpkg -i rstudio-<version>-i386.deb```, donde ```version``` refiere a la versión concreta que se haya descargado
+
+<div class="aligncenter">
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RSLogo.jpg?raw=true"   >
+
+
+</div>
+
+
+### Trabajando con RStudio
+
+<div class="aligncenter">
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/Disquete.png?raw=true"   >
+
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/Carpeta.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RScript.png?raw=true"   >
+
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RNotebook.png?raw=true"   >
+
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RMarkdown.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/Shiny.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/TextFile.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/C++File.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RSweave.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RHTML.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RPresentation.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RDocumentation.png?raw=true"   >
+
+</div>
+<div class = "aligncenter">
+</div>
+
+### Cómo pedir ayuda
+
+- ```help()```: obtener ayuda por consola
+- ```??...```: obtener ayuda por consola
+- Pestaña ```Help``` de Rstudio
+- [Cheat Sheet de RStudio](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- Buscar en San Google (stackoverflow, R project...)
+
+
+<div class="aligncenter">
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/help.png?raw=true"   >
+</div>
+
+
+### Paquetes: cómo instalarlos y cargarlos
+
+<l class="definition">Paquete.</l> Librería con funciones y datos que no necesariamente vienen instaladas de serie 
+
+- `install.packages("nombre_paquete", dep = TRUE)`: instala o actualiza un paquete de R
+- ```library(nombre_del_paquete)```: carga un paquete ya instalado
+
+
+
+
+
+
+## Utilizando R como calculadora
+
+### Calculadora básica - Operaciones
+
+Código |  Operación                                
+--------------------|--------------------
+```+``` | Suma
+```-``` | Resta 
+```*```  | Multiplicación
+```/``` | División 
+```^``` | Potencia 
+```%/%``` | Cociente entero
+``%%`` | Resto de división entera
+
+### Calculadora básica - Operaciones
+
+Código |  Significado                                 
+--------------------|--------------------
+```pi``` | [$\pi$](https://es.wikipedia.org/wiki/Número_π) 
+`Inf` | [$\infty$](https://es.wikipedia.org/wiki/Infinito)
+`NaN` | Indeterminación (Not a Number)
+`NA` | Valor desconocido (Not Available)
+
+### Calculadora básica - Operaciones
+
+```{r operaciones, exercise=TRUE, exercise.lines = 3}
+2+2
+77%/%5
+77%%5
+```
+
+### Calculadora básica - Funciones 
+Código |  Función                            
+--------------------|--------------------
+```sqrt(x)``` | $\sqrt{x}$
+```exp(x)``` | $e^x$  
+```log(x)``` | $\ln(x)$
+```log10(x)``` | $\log_{10}(x)$
+```log(x,a)``` | $\log_a(x)$ 
+```abs(x)``` | $\begin{vmatrix}x\end{vmatrix}$
+
+### Calculadora básica - Funciones
+
+```{r calc, exercise=TRUE, exercise.lines = 4}
+sqrt(9)
+log(exp(1))
+log(1000,10)
+log10(1000)
+```
+
+
+### Calculadora básica - Combinatoria
+
+Código |  Operación                                 
+--------------------|--------------------
+```factorial(x)``` | [$x!$](https://es.wikipedia.org/wiki/Factorial)  
+```choose(n,m)``` | $\begin{pmatrix}n\\ m\end{pmatrix}$   
+
+
+\vspace{0.2cm}
+
+- <l class="definition">Número factorial.</l> Se define como número factorial de un número entero positivo $n$ como $n!=n\cdot(n-1)\cdots 2\cdot 1$
+- <l class="definition">[Coeficiente binomial](https://es.wikipedia.org/wiki/Coeficiente_binomial).</l> Se define el coeficiente binomial de $n$ sobre $m$ como $$\begin{pmatrix}n\\ m\end{pmatrix}=\frac{n!}{m!(n-m)!}$$
+
+### Calculadora básica - Combinatoria
+
+<l class="definition">[Triángulo de Pascal](https://es.wikipedia.org/wiki/Triángulo_de_Pascal).</l>
+\usepackage{mathdots}
+\usepackage{yhmath}
+\usepackage{mathdots}
+\usepackage{MnSymbol}
+$$\begin{matrix}
+&&&&&1&&&&&\\
+&&&&1&&1&&&&\\
+&&&1&&2&&1&&&\\
+&&1&&3&&3&&1&&\\
+&1&&4&&6&&4&&1&\\
+1&&5&&10&&10&&5&&1\end{matrix}$$
+
+que se corresponde con ...
+
+### Calculadora básica - Combinatoria
+
+$$\begin{matrix}
+&&&&\begin{pmatrix}0\\0\end{pmatrix}&&&&\\
+&&&\begin{pmatrix}1\\0\end{pmatrix}&&\begin{pmatrix}1\\1\end{pmatrix}&&&\\
+&&\begin{pmatrix}2\\0\end{pmatrix}&&\begin{pmatrix}2\\1\end{pmatrix}&&\begin{pmatrix}2\\2\end{pmatrix}&&\\
+&\begin{pmatrix}3\\0\end{pmatrix}&&\begin{pmatrix}3\\1\end{pmatrix}&&\begin{pmatrix}3\\2\end{pmatrix}&&\begin{pmatrix}3\\3\end{pmatrix}&\\
+\begin{pmatrix}4\\0\end{pmatrix}&&\begin{pmatrix}4\\1\end{pmatrix}&&\begin{pmatrix}4\\2\end{pmatrix}&&\begin{pmatrix}4\\3\end{pmatrix}&&\begin{pmatrix}4\\4\end{pmatrix}\end{matrix}$$
+
+### Calculadora básica - Combinatoria
+
+```{r otracal, exercise=TRUE, exercise.lines = 4}
+factorial(5)
+choose(4,2)
+factorial(6)
+factorial(5)*6
+```
+
+### Trigonometría en radianes
+
+Código |  Función                                 
+--------------------|--------------------
+```sin(x)``` | $\sin(x)$
+```cos(x)``` | $\cos(x)$
+```tan(x)``` | $\tan(x)$
+```asin(x)``` | $\arcsin(x)$
+```acos(x)``` | $\arccos(x)$
+```atan(x)``` | $\arctan(x)$
+
+### Trigonometría en radianes
+
+```{r tri, exercise=TRUE, exercise.lines = 3}
+sin(pi/2)
+cos(pi)
+tan(0)
+```
+
+### Trigonometría en radianes
+
+<div class = "aligncenter">
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/trigon.png?raw=true"   >
+
+</div>
+
+### Un pequeño adelanto
+
+```{r graf, fig.height = 3.5, fig.width = 5, fig.align = "center", exercise=TRUE, exercise.lines = 6}
+x = seq(0,2*pi,0.1)
+plot(x,sin(x),type="l",col="blue",lwd=3, xlab=expression(x), ylab="")
+lines(x,cos(x),col="green",lwd=3)
+lines(x, tan(x), col="purple",lwd=3)
+legend("bottomleft",col=c("blue","green","purple"),
+     legend=c("Seno","Coseno", "Tangente"), lwd=3, bty="l")
+```
+
+
+
+### Números en coma flotante
+
+Código |  Función                                 
+-------|--------------------
+```print(x,n)``` | Muestra las $n$ cifras significativa del número $x$
+```round(x,n)``` | Redondea a $n$ cifras significativas un resultado o vector numérico $x$
+```floor(x)``` | $\lfloor x\rfloor$, parte entera por defecto de $x$
+```ceiling(x)``` | $\lceil x\rceil$, parte entera por exceso de $x$
+```trunc(x)``` | Parte entera de $x$, eliminando la parte decimal
+
+
+### Números en coma flotante
+
+```{r das, exercise=TRUE, exercise.lines = 4}
+print(pi,5)
+round(pi,5)
+floor(pi)
+ceiling(pi)
+```
+
+
+### Variables y funciones
+
+- `nombre_variable = valor`: define una variable con dicho valor
+- `nombre_función = function(variable){función}`: define una función
+
+```{r 123, exercise=TRUE, exercise.lines = 5}
+miVariable = 4
+doble = function(x){2*x}
+doble(miVariable)
+cuadrado = function(x){x^2}
+cuadrado(miVariable)
+```
+
+### Los tipos de datos en R
+
+- Lógicos: Corresponden a valores booleanos, con dos posibilidades: TRUE (Verdadero) y FALSE (falso). Usamos la función `class()` para determinar el tipo de datos.
+
+```{r 124, exercise=TRUE, exercise.lines = 5}
+l<-TRUE
+print(class(l))
+```
+
+-Numéricos: Valores en punto flotante, asociados a los números reales.
+
+```{r 125, exercise=TRUE, exercise.lines = 5}
+r<-3.1415926
+print(class(r))
+```
+-Enteros: 
+
+```{r 126, exercise=TRUE, exercise.lines = 5}
+n<-25
+print(class(n))
+```
+
+- Caracteres o cadenas de texto:
+
+```{r 127, exercise=TRUE, exercise.lines = 5}
+t<-'Hola Estudiantes'
+print(class(t))
+```
+- Complejos
+
+```{r 128, exercise=TRUE, exercise.lines = 5}
+c<-3-5i
+print(class(c))
+```
+- Vectores, comando c() para concatenar.
+
+Es un comando que nos permite vectorizar una sucesión de elementos:
+
+```{r 129, exercise=TRUE, exercise.lines = 5}
+x <- c(1,2,3)
+print(x)
+print(class(x))
+2*x+1
+x^2
+```
+
+## Manejo de datos en R
+
+### Carga de bases de datos
+
+Es necesario reconocer inicialmente el tipo de base de datos que queremos cargar en nuestro programa, a continuación mostramos los tipos de datos, los paquetes necesarios y su respectiva manera de cargarla en el código.
+
+
+| **Formato** |**Paquete** |**Código** |
+| :---: | :---: |:---:|
+|csv o txt||data<-read.table("archivo.csv",header=T,sep=";")|
+|xls o xlsx|library(readxl)|data<-read_excel("archivo.xlsx")|
+
+
+el valor de *sep* indica el caracter que separa a alas variables en la base y *header* toma valor T cuando la primera fila de la base contiene los nombres.
+
+#### Ejemplo
+
+El comando *read.csv* también funciona para cargar bases de datos en la web que esten como texto plano, ingrese al siguiente [enlace](https://raw.githubusercontent.com/jazaineam1/Script-B-sicos/master/nac2017.csv), el cual contiene  la información de nacimientos en Bogotá en el mes de diciembre del año 2018,  corrija la siguiente linea de código para cargar la base.
+
+
+
+```{r carga, exercise=TRUE, exercise.lines = 2}
+data=read.csv("https://raw.githubusercontent.com/jazaineam1/Script-B-sicos/master/nac2017.csv",sep=",",header=F)
+head(data)
+```
+
+```{r carga-solution,exercise.lines=2}
+data=read.csv("https://raw.githubusercontent.com/jazaineam1/Script-B-sicos/master/nac2017.csv",sep=";",header=T)
+head(data)
+```
+
+el comando *head* muestra a las primeras 6 filas de la base cargada.
+
+### Seleccionar filas y columnas
+
+En ocasiones nuestro análisis será colamente de un subconjunto de la base, lo cual hace necesario que podamos manipular las filas y columnas a voluntad, para esto usaremos los corchetes cuadrados *[]*,  nombre.de.base[**filas**,**columnas**], por ejemplo *data[1:5,8]* mostrará a las filas de la 1 a la 5 y a las columnnas 8 y 10
+
+```{r colum, exercise=T, exercise.lines =4 }
+data2=data[1:5,c(8,10)]
+data2
+```
+
+
+el comando *1:5* muestra las filas iniciando en 1 y terminando en 5 y el comando *c(8,10)* muestra a las columnas 8 y 10, en el caso en el cual las filas o columnas co sean consecutivas, estas deben especificarse en los parentesis cuadrados con lafunción *c()*
+
+#### Ejemplo
+
+de la base de datos de nacimientos, seleccioné las filas 5 y 9 y las columnas 8 y 6
+
+
+```{r colo, exercise=TRUE, exercise.lines = 4}
+
+```
+
+```{r colo-solution,exercise.lines=4}
+data2=data[c(5,9),c(8,6)]
+print(data2)
+```
+
+
+### Estructuras de control de flujo condicionales para filtrar información
+
+Las estructuras de control condicionales, son aquellas que nos permiten evaluar si una o más condiciones se cumplen, para decir qué acción vamos a ejecutar. La evaluación de condiciones, solo puede arrojar 1 de 2 resultados: verdadero o falso (True o False).
+
+|**Símbolo**|	**Significado**|	**Ejemplo**|	**Resultado**|
+|:---:|:---:|:---:|:---:|
+| `==`|	Igual que|	5 `==`7	|False|
+|`!=`	|Distinto que|	rojo `!=` verde|	True|
+|`<`|	Menor que|	8 `<` 12|	True|
+|`>`|	Mayor que|	12 `>` 7|	True|
+|`<=`|Menor o igual que|	12 `<=` 12|	True|
+|`>=`|	Mayor o igual que|	4 `>= 5`|	False|
+
+
+Es posible crear condiciones múltiples en una misma instrucción, para evaluar más de una condición simultáneamente, se utilizan operadores lógicos:
+
+
+
+|Operador|	Ejemplo	|Explicación	|Resultado|
+| :---: | :---: | :---: | :---: |
+|`&`|	5 `==` 7 and 7 `<` 12	|False and False|	False|
+|`&`|	9 `<` 12 and 12 `>` 7	|True and True|	True|
+|`&`|	9 `<` 12 and 12 `>` 15	|True and False|	False|
+|` \| ` |	12 `==` 12 or 15 `<` 7	|True or False|	True|
+|` \| ` |	7 `>` 5 or 9 `<` 12	|True or True|	True|
+|`^`|	4 `==` 4 xor 9 `>` 3	|True o True|	False|
+|`^`|	4 `==` 4 xor 9 `<` 3	|True o False|	True|
+
+#### Ejemplo
+
+Para la base de datos data deseamos hacer un filtro para ver el nombre de la administradora en salud, a la que pertenece la madre (NOMCLASAD) a CAPITAL SALUD y mostraremos solamente a los padres menores a 18 años, en este caso solo veremos a estas 2 variables.
+
+```{r filtro, exercise=TRUE, exercise.lines = 4}
+datafiltro=data[data$NOMCLASAD=="CAPITAL SALUD"&data$EDAD_PADRE<18 ,37:38]
+datafiltro
+
+```
+note que si R entiende a la variable como cualitativa, apararecerá un pequeño comentario indicando que es *character* *(chr)* o *integer* *(int)* si la variable es cuantitativa.
+
+### Exportar bases 
+
+Para esto necesitamos hacer suo del comando *write.csv2()*, como ejemplo exportaremos a la base filtrada en el paso anterior, esta nueva base aparecerá en la carpeta predefinida del PC usualmente Documentos.
+
+
+
+```{r oda, exercise=TRUE, exercise.lines = 4}
+datafiltro=data[data$NOMCLASAD=="CAPITAL SALUD"&data$EDAD_PADRE<18 ,37:38]
+write.csv2(datafiltro,"ejemplofiltro.csv")
+
+```
+
+
+
+
+
+## Tablas de frecuencias y gráficas para variables cualitativas
+
+La estadística descriptiva se encarga de organizar datos con el fin de mostrar la distribución general de éstos y el
+lugar en donde tienden a concentrarse, además de señalar valores de datos poco usuales o
+extremos. El primer procedimiento que se emplea para organizar y resumir un conjunto de
+datos es una tabla de frecuencias.
+
+![](https://image.flaticon.com/icons/svg/888/888000.svg){width=10%}
+
+Si hablamos de **frecuencia estadística**, podemos definirlo como el número de veces que se repite un dato en una muestra estadística.
+
+Para definir correctamente las frecuencias necesitamos diferenciar entre dos tipos o dos maneras de representarlas:
+
+**Frecuencia Absoluta:** es la definición que entenderíamos habitualmente como frecuencia estadística. Básicamente es el conteo de operaciones que se repiten en una muestra o experimento.
+
+Para ilustrarlo  usaremos el conjunto de datos de estadísticas de nacimientos en el mes de diciembre, para el año 2018.
+
+```{r fre1, exercise=TRUE, exercise.lines = 3}
+tabla=data.frame(table(data$SEXO))
+tabla
+```
+
+La categoría 1 hace referencia a masculino, la categoría 2 a femenino y la 3 a indeterminado,para ver la codificación revisar el siguiente [enlace](http://microdatos.dane.gov.co/index.php/catalog/652/datafile/F7), lo que muestra que en diciembre de 2018 en la ciudad de Bogotá, nacieron 4604 niños, 4285 niñas y un nacido con sexo indefinido.
+
+**Frecuencia Relativa:** se trata simplemente del cociente entre la frecuencia absoluta (calculada según las indicaciones del punto anterior) y el tamaño de la muestra o el número de veces que se haya realizado un experimento.
+
+
+
+```{r frer, message=FALSE, warning=FALSE, exercise=TRUE, exercise.lines=5}
+tabla=table(data$SEXO)
+tabla.prop=prop.table(table(data$SEXO))
+data.frame(tabla.prop)
+```
+
+La función data.frame representa de manera mas estético el resultado de la tabla, de manera porcentual podríamos decir que el 51.78% de los nacidos vivos es niño y el 48.20% son niñas.
+
+
+**Frecuencias acumuladas.** Del mismo modo que realizamos los dos cálculos indicados en los párrafos anteriores, tanto las frecuencias absolutas y como las frecuencias relativas pueden ser mostradas de forma acumulada, está frecuencia es muy útil cuando la variable de análisis es ordinal.
+
+Usaremos la variable NIV_EDUM, referida a último nivel de estudio que aprobó la madre 
+
+
+|**NIV_EDUM**|
+|---|
+|1 = Preescolar|
+|2 = Básica primaria|
+|3 = Básica secundaria|
+|4 = Media académica o clásica|
+|5 = Media técnica|
+|6 = Normalista|
+|7 = Técnica profesional|
+|8 = Tecnológica|
+|9 = Profesional|
+|10 = Especialización|
+|11 = Maestría|
+|12 = Doctorado|
+|13 = Ninguno|
+
+
+```{r freac, exercise=TRUE, exercise.lines = 3}
+data.frame("Frecuencia.absoluta.acumulada"=cumsum(table(data$NIV_EDUM)))
+```
+
+lo que puede analizarse como 6812 madres tenian una educación tecnológica o inferior.
+
+### Diagrama de barras
+
+En ella, las clases o categorías  se representan en el eje horizontal y la frecuencia de
+clase en el eje vertical. Las frecuencias de clase son proporcionales a las alturas de las
+barras.
+
+```{r bar, exercise=TRUE, exercise.lines = 3}
+tabla=data.frame(table(data$SEXO))
+barplot(table(data$SEXO), col = "steelblue", ylab="Frecuencia",xlab="Sexo",main="Diagrama de barras para el sexo del nacido")
+```
+
+### Diagrama de torta 
+
+Gráfica que muestra la parte o porcentaje que representa cada clase del
+total de números de frecuencia.
+
+```{r pie, exercise=TRUE, exercise.lines = 3}
+tabla=data.frame(table(data$SEXO))
+pie(table(data$SEXO),col=c("red","yellow","orange") ,xlab="Sexo",main="Diagrama de barras para el sexo del nacido \n Bogotá 2018")
+```
+
+Existen otras formas de realizar gráficas, por ejemplo, la librería plotly crea gráficos más estilizados.
+
+```{r pie2,  exercise=TRUE, message=FALSE, warning=FALSE, exercise.lines=10}
+library(plotly)
+tabla=data.frame(table(data$SEXO))
+Categorias=c("Masculino", "Femenino","Indefinido")
+datos <- data.frame(Categorias, "Sexo"=tabla$Freq)
+fig <- plot_ly(datos, labels = ~Categorias, values = ~Sexo, type = 'pie')
+fig <- fig %>% layout(title = 'Sexo de nacidos vivos en Bogotá 2018',
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+fig
+```
+**Importante:** se debe verificar que la librería de plotly este instalada, en el caso de no estarlo ejecuta en la consola `install.packages('plotly')`, para más información de plotly ingresaar al siguiente [enlace](https://plotly.com/r/) 
+
+
+
+## Gráficas para variables cuantitativas
+![](https://image.flaticon.com/icons/svg/921/921591.svg){width=10%}
+
+### Histogramas
+
+
+Un histograma de frecuencia relativa es semejante a una gráfica de barras, pero se usa para
+graficar cantidades en lugar de datos cualitativos.  Primero, dividimos el intervalo de
+las mediciones más pequeñas a las más grandes en subintervalos o clases de igual longitud.  Si se ponen en columna los puntos de cada subintervalo y se traza
+una barra sobre cada una de las columnas, se habrá creado un histograma de frecuencia
+o un histograma de frecuencia relativa, dependiendo de la escala del eje vertical.
+
+A continuación realizamos el histograma para la variable *EDAD_PADRE*
+
+```{r hist, message=FALSE, warning=FALSE, exercise=TRUE, exercise.lines=3}
+library(plotly)
+
+Animals <- c("giraffes", "orangutans", "monkeys")
+SF_Zoo <- c(20, 14, 23)
+LA_Zoo <- c(12, 18, 29)
+data <- data.frame(Animals, SF_Zoo, LA_Zoo)
+
+fig <- plot_ly(data, x = ~Animals, y = ~SF_Zoo, type = 'bar', name = 'SF Zoo')
+fig <- fig %>% add_trace(y = ~LA_Zoo, name = 'LA Zoo')
+fig <- fig %>% layout(yaxis = list(title = 'Count'), barmode = 'group')
+
+fig
+
+```
+
+
+### Gráfica de líneas
+
+Cuando una variable cuantitativa se registra en el tiempo a intervalos igualmente espaciados (por ejemplo diario, semanal, mensual, trimestral o anual) el conjunto de datos
+forma una serie de tiempo.
+
+Para esto usaremos el precio de la acción de apple desde el 17 de febrero del 2015 hasta el 16 de febrero de 2017.
+
+```{r pie3, message=FALSE, warning=FALSE, exercise=TRUE, exercise.lines=5}
+library(plotly)
+df <- read.csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+fig3 <- plot_ly(x = ~as.Date(df$Date, format= "%Y-%m-%d"), type = 'scatter', y = ~df$AAPL.High, mode = "lines") %>% layout(title = "Serie de tiempo de apple",  xaxis = list(title="Fecha"), yaxis = list(title="Precio"))
+fig3
+```
