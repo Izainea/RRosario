@@ -278,6 +278,26 @@ Para ejecuitar su script tiene dos alternativas:
 
 Su RStudio debe verse así:
 
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/Script2.png"  >
+</div>
+
+
+Le recomendamos guardar el script y ponerle un nombre muy especial, finalmente este es su primer paso en las grandes ligas.
+
+El anterior gráfico muestra como en el panel de entorno se van guardandfo las variables y funciones que se van creando. Hablemos al respecto:
+
+### Entorno 
+
+En el panel entorno hay dos pestaña que se destacan:
+
+**Environment**
+
+Donde se irán registrando los objetos que se van creando en la sesión de trabajo. Si se carga una sesión previa también se actualizará según lo que se guardo, permitiendonos también importar datos y limpiar los objetos de la sesión.
+
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/entorno.png"  >
+</div>
 
 
 ## Cómo pedir ayuda
