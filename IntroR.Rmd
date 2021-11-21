@@ -23,9 +23,6 @@ R es un entorno y lenguaje de programación para el análisis estadístico y gr�
 
 Para trabajarlo aparte de R debemos instalar R-Studio, una interfaz gráfica de usuario de R para todos los sistemas operativos, resulta ser un entorno integrado para programar y analizar con R.
 
-<div class="aligncenter"> 
-<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/InterfazRStudio.png?raw=true"  >
-</div> 
 
 Para instalar lo requerido en el sistema se sugiere seguir las siguientes instrucciones:
 
@@ -75,7 +72,7 @@ Para instalar lo requerido en el sistema se sugiere seguir las siguientes instru
 3. Siga las instrucciones de instalación:
 
 <div class="aligncenter"> 
-<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/instaRstudio4.png"  >
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/instaRstudio3.png"  >
 </div>
 
 **Para usuarios de linux: **, ejecutar en una terminal la siguiente instrucción para completar la instalación: ```sudo dpkg -i rstudio-<version>-i386.deb```, donde ```version``` refiere a la versión concreta que se haya descargado.
@@ -85,6 +82,12 @@ Al terminar nuestra instalación de RStudio lo abrimos y veremos lo siguiente:
 <div class="aligncenter"> 
 <img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/RStudio.png"  >
 </div>
+
+Aquí:
+
+<div class="aligncenter"> 
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/InterfazRStudio.png?raw=true"  >
+</div> 
 
 
 ### Trabajando con RStudio
