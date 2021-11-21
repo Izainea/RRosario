@@ -121,23 +121,30 @@ $(document).ready(function () {
 <div id="section-qué-es-r" class="section level3">
 <h3>¿Qué es R?</h3>
 <div class="aligncenter">
-<p><img src="https://cran.rstudio.com/Rlogo.svg" width = "100"  ></p>
+<p><img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/LogoCurso.png?raw=true" width = "100"  ></p>
 </div>
-<p>R es un entorno y lenguaje de programación para el análisis estadístico y gráfico de datos. Es un proyuecto de software libre y código abierto y hoy, junto con Python, es uno de los lenguajes obligatorios en la analítica de datos.</p>
-<p>Para trabajarlo aparte de R debemos instalar R-Studio, una interfaz gráfica de usuario de R para todos los sistemas operativos</p>
-<p>Es un entorno integrado para programar y analizar con R.</p>
+<ul>
+<li>Entorno de programación para el análisis estadístico y gráfico de datos</li>
+<li>Software libre</li>
+<li>Sintaxis sencilla e intuitiva</li>
+<li>Enorme comunidad de usuarios (Comprehensive R Archive Network, CRAN)</li>
+<li>Para más información <a href="https://www.r-bloggers.com/why-use-r-five-reasons/">Haz click aquí</a></li>
+</ul>
+</div>
+<div id="section-qué-es-rstudio" class="section level3">
+<h3>¿Qué es RStudio?</h3>
+<p>En este curso usaremos RStudio como interfaz gráfica de usuario de R para todos los sistemas operativos</p>
+<p>Es un entorno integrado para utilizar y programar con R</p>
 <div class="aligncenter">
 <p><img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/InterfazRStudio.png?raw=true"  ></p>
 </div>
-<p>Para instalar lo requerido en el sistema se sugiere seguir las siguientes instrucciones:</p>
 </div>
 <div id="section-cómo-instalar-r" class="section level3">
 <h3>Cómo instalar R</h3>
+<p><strong>Si eres de Windows o Mac</strong></p>
 <ol style="list-style-type: decimal">
 <li>Dirigirse a <a href="http://cran.r-project.org/">CRAN</a></li>
-</ol>
-<p><img src="/imagenes/instaR.png" /> 2. Ingresar al enlace correspondiente a tu sistema operativo (en el ejemplo trabajaremos con <strong>Windows</strong>):</p>
-<ol start="3" style="list-style-type: decimal">
+<li>Ingresar al enlace correspondiente a vuestro sistema operativo</li>
 <li>Seguir las instrucciones de instalación correspondientes</li>
 </ol>
 <p><strong>Si trabajan con Ubuntu o Debian</strong></p>
@@ -891,8 +898,6 @@ fig3</code></pre>
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
-data=read.csv("https://raw.githubusercontent.com/jazaineam1/Script-B-sicos/master/nac2017.csv",sep=";",header=T)
-data=data[data$EDAD_PADRE!=999,]
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">

@@ -7,8 +7,6 @@ runtime: shiny_prerendered
 ```{r setup, include=FALSE}
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
-data=read.csv("https://raw.githubusercontent.com/jazaineam1/Script-B-sicos/master/nac2017.csv",sep=";",header=T)
-data=data[data$EDAD_PADRE!=999,]
 ```
 
 ## Conociendo R
@@ -17,31 +15,34 @@ data=data[data$EDAD_PADRE!=999,]
 ### ¿Qué es R?
 
 <div class="aligncenter"> 
-  <img src="https://cran.rstudio.com/Rlogo.svg" width = "100"  >
+  <img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/LogoCurso.png?raw=true" width = "100"  >
 </div>
 
-R es un entorno y lenguaje de programación para el análisis estadístico y gráfico de datos. Es un proyuecto de software libre y código abierto y hoy, junto con  Python, es uno de los lenguajes obligatorios en la analítica de datos.
 
-Para trabajarlo aparte de R debemos instalar R-Studio, una interfaz gráfica de usuario de R para todos los sistemas operativos
+- Entorno de programación para el análisis estadístico y gráfico de datos
+- Software libre
+- Sintaxis sencilla e intuitiva
+- Enorme comunidad de usuarios (Comprehensive R Archive Network, CRAN)
+- Para más información [Haz click aquí](https://www.r-bloggers.com/why-use-r-five-reasons/)
 
-Es un entorno integrado para programar y analizar con R.
+
+### ¿Qué es RStudio?
+
+En este curso usaremos RStudio como interfaz gráfica de usuario de R para todos los sistemas operativos
+
+Es un entorno integrado para utilizar y programar con R
 
 <div class="aligncenter"> 
 <img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/InterfazRStudio.png?raw=true"  >
 </div> 
 
-Para instalar lo requerido en el sistema se sugiere seguir las siguientes instrucciones:
-
 
 ### Cómo instalar R
 
+**Si eres de Windows o Mac**
+
 1. Dirigirse  a [CRAN](http://cran.r-project.org/)
-
-![](/imagenes/instaR.png)
-2. Ingresar al  enlace correspondiente a tu sistema operativo (en el ejemplo trabajaremos con **Windows**):
-
-
-
+2. Ingresar al  enlace correspondiente a vuestro sistema operativo
 3. Seguir las instrucciones de instalación correspondientes
 
 **Si trabajan con Ubuntu o Debian**
@@ -105,10 +106,6 @@ Para instalar lo requerido en el sistema se sugiere seguir las siguientes instru
 
 - `install.packages("nombre_paquete", dep = TRUE)`: instala o actualiza un paquete de R
 - ```library(nombre_del_paquete)```: carga un paquete ya instalado
-
-
-
-
 
 
 ## Utilizando R como calculadora

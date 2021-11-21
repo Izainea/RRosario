@@ -1,0 +1,179 @@
+---
+title: "Introducción a R"
+output: learnr::tutorial
+runtime: shiny_prerendered  
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Conociendo R
+
+<div class="aligncenter"> 
+  <img src="https://cran.rstudio.com/Rlogo.svg" width = "100"  >
+</div>
+
+### ¿Qué es R?
+
+
+R es un entorno y lenguaje de programación para el análisis estadístico y gráfico de datos. Es un proyuecto de software libre y código abierto y hoy, junto con  Python, es uno de los lenguajes obligatorios en la analítica de datos.
+
+Para trabajarlo aparte de R debemos instalar R-Studio, una interfaz gráfica de usuario de R para todos los sistemas operativos, resulta ser un entorno integrado para programar y analizar con R.
+
+<div class="aligncenter"> 
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/InterfazRStudio.png?raw=true"  >
+</div> 
+
+Para instalar lo requerido en el sistema se sugiere seguir las siguientes instrucciones:
+
+#### Instalación de R
+
+1. Dirigirse  a [CRAN - https://cran.r-project.org/](http://cran.r-project.org/)
+
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/instaR.png"  >
+</div>
+
+2. Ingresar al  enlace correspondiente a tu sistema operativo (en el ejemplo trabajaremos con **Windows**) y hacer click en *install R for the first time*:
+
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/instaR2.png"  >
+</div>
+
+
+3. Descargar el instalador:
+
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/instaR3.png"  >
+</div>
+
+4. Seguir las instrucciones de instalación correspondientes:
+
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/instaR4.png"  >
+</div>
+
+
+
+#### Instalación de RStudio
+
+1. Descarga [RStudio - https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
+
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/instaRstudio.png"  >
+</div>
+
+2. Descargue la versión apropiada según su sistema operativo:
+
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/instaRstudio2.png"  >
+</div>
+
+3. Siga las instrucciones de instalación:
+
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/instaRstudio4.png"  >
+</div>
+
+**Para usuarios de linux: **, ejecutar en una terminal la siguiente instrucción para completar la instalación: ```sudo dpkg -i rstudio-<version>-i386.deb```, donde ```version``` refiere a la versión concreta que se haya descargado.
+
+Al terminar nuestra instalación de RStudio lo abrimos y veremos lo siguiente:
+
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/RStudio.png"  >
+</div>
+
+
+### Trabajando con RStudio
+
+<div class="aligncenter">
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/Disquete.png?raw=true"   >
+
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/Carpeta.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RScript.png?raw=true"   >
+
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RNotebook.png?raw=true"   >
+
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RMarkdown.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/Shiny.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/TextFile.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/C++File.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RSweave.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RHTML.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RPresentation.png?raw=true"   >
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/RDocumentation.png?raw=true"   >
+
+</div>
+<div class = "aligncenter">
+</div>
+
+### Cómo pedir ayuda
+
+- ```help()```: obtener ayuda por consola
+- ```??...```: obtener ayuda por consola
+- Pestaña ```Help``` de Rstudio
+- [Cheat Sheet de RStudio](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+- Buscar en San Google (stackoverflow, R project...)
+
+
+<div class="aligncenter">
+<img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/help.png?raw=true"   >
+</div>
+
+
+### Paquetes: cómo instalarlos y cargarlos
+
+<l class="definition">Paquete.</l> Librería con funciones y datos que no necesariamente vienen instaladas de serie 
+
+- `install.packages("nombre_paquete", dep = TRUE)`: instala o actualiza un paquete de R
+- ```library(nombre_del_paquete)```: carga un paquete ya instalado
+
+
+
+
+## Inputs and Outputs
+
+You can embed Shiny inputs and outputs in your document. Outputs are automatically updated whenever inputs change.  This demonstrates how a standard R plot can be made interactive by wrapping it in the Shiny `renderPlot` function. The `selectInput` and `sliderInput` functions create the input widgets used to drive the plot.
+
+```{r eruptions, echo=FALSE}
+inputPanel(
+  selectInput("n_breaks", label = "Number of bins:",
+              choices = c(10, 20, 35, 50), selected = 20),
+  
+  sliderInput("bw_adjust", label = "Bandwidth adjustment:",
+              min = 0.2, max = 2, value = 1, step = 0.2)
+)
+
+renderPlot({
+  hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),
+       xlab = "Duration (minutes)", main = "Geyser eruption duration")
+  
+  dens <- density(faithful$eruptions, adjust = input$bw_adjust)
+  lines(dens, col = "blue")
+})
+```
+
+## Embedded Application
+
+It's also possible to embed an entire Shiny application within an R Markdown document using the `shinyAppDir` function. This example embeds a Shiny application located in another directory:
+
+```{r tabsets, echo=FALSE}
+shinyAppDir(
+  system.file("examples/06_tabsets", package = "shiny"),
+  options = list(
+    width = "100%", height = 550
+  )
+)
+```
+
+Note the use of the `height` parameter to determine how much vertical space the embedded application should occupy.
+
+You can also use the `shinyApp` function to define an application inline rather then in an external directory.
+
+In all of R code chunks above the `echo = FALSE` attribute is used. This is to prevent the R code within the chunk from rendering in the document alongside the Shiny components.
+
+
+
