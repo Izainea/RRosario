@@ -289,7 +289,7 @@ El anterior gráfico muestra como en el panel de entorno se van guardandfo las v
 
 ### Entorno 
 
-En el panel entorno hay dos pestaña que se destacan:
+En el panel entorno hay algunas pestañas que se destacan:
 
 **Environment**
 
@@ -298,6 +298,18 @@ Donde se irán registrando los objetos que se van creando en la sesión de traba
 <div class="aligncenter"> 
 <img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/entorno.png"  >
 </div>
+
+**History**
+
+History les mostrará las instrucciones ejecutadas:
+
+<div class="aligncenter"> 
+<img width='600px' src="https://raw.githubusercontent.com/Izainea/RRosario/main/imagenes/history.png"  >
+</div>
+
+**Tutorial**
+
+Que contiene tutoriales sencillos para iniciar el trabajo con R.
 
 
 ## Cómo pedir ayuda
