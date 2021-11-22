@@ -96,7 +96,7 @@ Aquídiferenciamos las siguientes zonas:
 <img src="https://github.com/lacamposm860624/Curso-RYP-Ucentral/blob/master/IMG/Imgs/InterfazRStudio.png?raw=true"  >
 </div> 
 
-Los paneles de RStudio permiten una interacción más amigable con R. Veamos a continuación una expliación muy sencilla de cada panel de trabajo y empecemos a interactuar con la aplicación:
+Los paneles de RStudio permiten una interacción más amigable con R. Veamos a continuación una expliCación muy sencilla de cada panel de trabajo y empecemos a interactuar con la aplicación:
 
 ### Consola
 
@@ -202,7 +202,7 @@ exp(1)
 sqrt(16)
 ```
 
-o funciones útiles en alñgoritmos y de un carácter más computacional:
+o funciones útiles en algoritmos y de un carácter más computacional:
 
 Código |  Función                                 
 -------|--------------------
@@ -285,7 +285,7 @@ Su RStudio debe verse así:
 
 Le recomendamos guardar el script y ponerle un nombre muy especial, finalmente este es su primer paso en las grandes ligas.
 
-El anterior gráfico muestra como en el panel de entorno se van guardandfo las variables y funciones que se van creando. Hablemos al respecto:
+El anterior gráfico muestra como en el panel de entorno se van guardando las variables y funciones que se van creando. Hablemos al respecto:
 
 ### Entorno 
 
@@ -313,7 +313,7 @@ Contiene tutoriales sencillos para iniciar el trabajo con R.
 
 ### Archivos, gráficos, paquetes y ayuda
 
-El último panel permitira visualizar gráficos, explorar archivos y consultar la ayuda de R. Además permitirá ver la lista de paquetes y ahí abrirá la documentación cuando la necesitemos:
+El último panel permitirá visualizar gráficos, explorar archivos y consultar la ayuda de R. Además permitirá ver la lista de paquetes y ahí abrirá la documentación cuando la necesitemos.
 
 #### Fijar directorio de trabajo
 
@@ -351,4 +351,129 @@ getwd()
 - ```library(nombre_del_paquete)```: carga un paquete ya instalado
 
 
+## Tipos de datos en R
 
+En la sección anterior trabajamos con R pensandolo como una calculadora, obviamente es más que eso. En principio porque, aparte de trabajar con valores numéricos, permite utilizar vectores, arreglos y matrices y otra gran cantidad de tipos de datos. Veamos algunos de los más importantes:
+
+### Datos booleanos (Lógicos) 
+
+
+Corresponden a valores, con dos posibilidades: TRUE (Verdadero) y FALSE (falso). Usamos la función class() para determinar el tipo de datos.
+
+```{r bool1, exercise=TRUE, exercise.lines = 5}
+l<- TRUE
+print(class(l))
+```
+
+Estos valores también se encuentran al aplicar operadores lógicos, por ejemplo:
+
+
+```{r bool2, exercise=TRUE, exercise.lines = 10}
+5==5
+4!=4
+5>5
+4<=4
+3<2
+2>3
+
+
+```
+
+
+### Datos numéricos
+
+En este sentido se destacan tres tipos de datos, números enteros, en punto flotante (R los llama numéricos) o complejos. R , con el comando `class` indica que tipo de datos son:
+
+```{r num1, exercise=TRUE, exercise.lines = 3}
+n<-15
+print(class(n))
+```
+
+```{r num2, exercise=TRUE, exercise.lines = 5}
+n<-4.256
+print(class(n))
+```
+
+```{r num3, exercise=TRUE, exercise.lines = 5}
+n<-4.256+2i
+print(class(n))
+```
+
+
+### Vectores
+
+
+Los vectores serán objetos fundamentales para R, en gran medida es porque la mayoria de operaciones que aplicamos en R trabajan de forma vectorial, para definir un vector usamos la siguientes sintaxis
+
+```
+c(4,9,16,25)
+```
+
+En este ejemplo definimos el vector $[4,9,16,25]$.
+
+Entender como opera R es fácil en el siguiente ejemplo:
+
+```{r opr1, exercise=TRUE, exercise.lines = 5}
+v<-c(4,9,16,25)
+sqrt(v)
+```
+
+Como podemos apreciar, R aplica la función componente a componente.
+
+Hagamos una suma:
+
+```{r opr2, exercise=TRUE, exercise.lines = 5}
+v<-c(4,9,16,25)
+w<-c(1,2,3,4) 
+v+w
+
+```
+
+Hay un hecho muy particular al respecto, a veces R hace operaciones que en matemáticas no tienen tanto sentido, cual es la diferencia de los siguientes vectores:
+
+```{r opr3, exercise=TRUE, exercise.lines = 5}
+v<-c(4,9,16,25)
+w<-c(1,2,3,4,5) 
+
+```
+
+Efectivamente, nos referimos a vectores que miden diferente, podríamos usar `length()` para verificarlo:
+
+```{r opr4, exercise=TRUE, exercise.lines = 5}
+v<-c(4,9,16,25)
+w<-c(1,2,3,4,5) 
+lenght(v)
+lenght(w)
+
+```
+
+En matemáticas estos vectores no se podrían sumar, pero en R:
+
+```{r opr5, exercise=TRUE, exercise.lines = 5}
+v<-c(4,9,16,25)
+w<-c(1,2,3,4,5) 
+v+w
+
+```
+
+Hay que ser cuidadoso con este tipo de advertencias, seguramente el cálculo se obtiene pero a qué precio.
+
+#### Explorar un vector
+
+Acabamos aquí con la identificación de elementos dentro de un vector, usamos `vector[posición]` para identifiarlos:
+
+```{r opr6, exercise=TRUE, exercise.lines = 5}
+v<-c(4,9,16,25)
+v[1]
+v[3]
+v[5]
+
+```
+
+## Referencias
+
+Para empezar a aprender R hay muchas referencias, aquí dejamos algunas sugeridas en la página oficial:
+
+* [Introducción a R](https://cran.r-project.org/doc/contrib/R-intro-1.1.0-espanol.1.pdf),  W.N.Venables, D.M. Smith and the R Development Core Team.
+* [R para principiantes](https://cran.r-project.org/doc/contrib/rdebuts_es.pdf) Emmanuel Paradis.
+* [Curso de introducción a R](https://www.uv.es/vcoll/nota-informativa.html) V. Coll and P. Pérez.
